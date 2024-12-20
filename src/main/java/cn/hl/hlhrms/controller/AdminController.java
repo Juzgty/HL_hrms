@@ -28,7 +28,7 @@ public class AdminController {
      */
     @GetMapping("/login")
     public String loginPage() {
-        return "admin/login"; // Thymeleaf 视图模板
+        return "login"; // Thymeleaf 视图模板
     }
 
     /**
@@ -46,10 +46,10 @@ public class AdminController {
         try {
             Admin admin = adminService.login(username, password);
             model.addAttribute("admin", admin);
-            return "admin/dashboard"; // 登录成功后跳转到管理员主页
+            return "home"; // 登录成功后跳转到管理员主页
         } catch (Exception e) {
             model.addAttribute("error", "用户名或密码错误");
-            return "admin/login"; // 登录失败，返回登录页面
+            return "login"; // 登录失败，返回登录页面
         }
     }
 

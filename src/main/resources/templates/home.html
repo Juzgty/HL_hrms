@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>首页 - 人事管理系统</title>
+  <link rel="stylesheet" th:href="@{/css/homestyle.css}">
+</head>
+<body>
+<h1>欢迎进入人事管理系统</h1>
+
+<div class="button-container">
+  <a th:href="@{/departments}" class="button">部门管理</a>
+  <a th:href="@{/employees}" class="button">员工管理</a>
+  <a th:href="@{/positions}" class="button">职位管理</a>
+</div>
+</body>
+</html>
