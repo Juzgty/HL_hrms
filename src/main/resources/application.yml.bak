@@ -8,3 +8,5 @@ spring:
     password: 123456hhx
   thymeleaf:
     cache: false
+
+# 将文件名后缀的 .bak 删除，然后修改数据库密码
