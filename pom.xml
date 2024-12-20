@@ -14,21 +14,42 @@
     <name>HL-HRMS</name>
     <description>HL-HRMS</description>
     <url/>
+
+    <!-- 许可证信息 -->
     <licenses>
-        <license/>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
     </licenses>
+
+    <!-- 开发者信息 -->
     <developers>
-        <developer/>
+        <developer>
+            <id>developer1</id>
+            <name>hhx</name>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>developer2</id>
+            <name>cl</name>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
     </developers>
+
+    <!-- SCM信息 -->
     <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
+        <tag>HEAD</tag>
+        <url>https://github.com/Juzgty/HL_hrms.git</url>
     </scm>
-    <properties>
-        <java.version>23</java.version>
-    </properties>
+
+    <!-- 依赖包 -->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -64,6 +85,7 @@
         </dependency>
     </dependencies>
 
+    <!-- 插件 -->
     <build>
         <plugins>
             <plugin>
