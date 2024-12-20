@@ -52,7 +52,6 @@ public class AdminController {
             return "login"; // 登录失败，返回登录页面
         }
     }
-
     /**
      * 管理员注册页面
      *
