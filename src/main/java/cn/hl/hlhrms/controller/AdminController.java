@@ -59,7 +59,7 @@ public class AdminController {
      */
     @GetMapping("/register")
     public String registerPage() {
-        return "admin/register"; // Thymeleaf 视图模板
+        return "register"; // Thymeleaf 视图模板
     }
 
     /**
