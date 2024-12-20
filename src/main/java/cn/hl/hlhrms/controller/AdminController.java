@@ -46,7 +46,7 @@ public class AdminController {
         Admin admin = adminService.login(username, password);
         if (admin != null) {
             model.addAttribute("admin", admin);
-            return "home"; // 登录成功后跳转到员工列表页面
+            return "home"; // 登录成功后跳转到首页
         } else {
             model.addAttribute("error", "用户名或密码错误");
             return "login"; // 登录失败后返回登录页面
