@@ -13,7 +13,7 @@
       <h2 class="text-center mb-4">人事管理系统 - 登录</h2>
       <div class="card shadow">
         <div class="card-body">
-          <form method="post" th:action="@{/login}">
+          <form method="post" th:action="@{/login.html}">
             <div class="mb-3">
               <label for="username" class="form-label">用户名</label>
               <input type="text" id="username" name="username" class="form-control" placeholder="请输入用户名" required>
@@ -28,7 +28,7 @@
           </form>
         </div>
         <div class="card-footer text-center">
-          <p>没有账号？ <a th:href="@{/register}" class="link-primary">注册</a></p>
+          <p>没有账号？ <a th:href="@{/register.html}" class="link-primary">注册</a></p>
         </div>
       </div>
     </div>
