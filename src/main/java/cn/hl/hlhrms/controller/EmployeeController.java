@@ -24,6 +24,20 @@ public class EmployeeController {
     }
 
     /**
+     * 获取所有员工信息
+     *
+     * @param model 存储员工列表
+     * @return 员工列表页面
+     */
+    @GetMapping("/list")
+    public String listAllEmployees(Model model) {
+        List<Employee> employees = employeeService.getAllEmployees();
+        model.addAttribute("employees", employees);
+        System.out.println("员工列表：" + employees);
+        return "employee"; // 返回员工列表页面
+    }
+
+    /**
      * 添加员工页面
      *
      * @return 添加员工页面视图

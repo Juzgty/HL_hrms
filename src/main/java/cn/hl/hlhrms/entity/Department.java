@@ -2,6 +2,7 @@ package cn.hl.hlhrms.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
 
 @Entity
 @Data
+@ToString(exclude = "employees")
 @Table(name = "hl_department")
 public class Department {
     // 部门id

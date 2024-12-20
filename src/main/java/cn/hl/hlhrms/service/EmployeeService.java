@@ -56,4 +56,11 @@ public interface EmployeeService {
      * @return 员工列表
      */
     List<Employee> findEmployeeByPosition(Integer positionId);
+
+    /**
+     * 获取所有员工信息
+     *
+     * @return 员工列表
+     */
+    List<Employee> getAllEmployees();
 }

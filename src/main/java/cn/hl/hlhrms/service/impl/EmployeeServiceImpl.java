@@ -54,4 +54,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public List<Employee> findEmployeeByPosition(Integer positionId) {
         return employeeRepository.findByPosition_PosId(positionId);
     }
+
+    @Override
+    public List<Employee> getAllEmployees() {
+        return employeeRepository.findAll();
+    }
 }
