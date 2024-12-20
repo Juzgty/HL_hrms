@@ -2,6 +2,7 @@ package cn.hl.hlhrms.controller;
 
 import cn.hl.hlhrms.entity.Admin;
 import cn.hl.hlhrms.service.AdminService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,15 +44,16 @@ public class AdminController {
     public String login(@RequestParam("username") String username,
                         @RequestParam("password") String password,
                         Model model) {
-        try {
-            Admin admin = adminService.login(username, password);
+        Admin admin = adminService.login(username, password);
+        if (admin != null) {
             model.addAttribute("admin", admin);
-            return "home"; // 登录成功后跳转到管理员主页
-        } catch (Exception e) {
+            return "home"; // 登录成功后跳转到员工列表页面
+        } else {
             model.addAttribute("error", "用户名或密码错误");
-            return "login"; // 登录失败，返回登录页面
+            return "login"; // 登录失败后返回登录页面
         }
     }
+
     /**
      * 管理员注册页面
      *
@@ -73,7 +75,7 @@ public class AdminController {
     public String register(@ModelAttribute Admin admin, Model model) {
         adminService.registerAdmin(admin);
         model.addAttribute("message", "注册成功");
-        return "admin/login"; // 注册成功后跳转到登录页面
+        return "login"; // 注册成功后跳转到登录页面
     }
 
     /**
