@@ -8,7 +8,7 @@
         <version>3.4.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>org.example</groupId>
+    <groupId>cn.hl</groupId>
     <artifactId>HL_HRMS</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>HL-HRMS</name>
