@@ -13,14 +13,17 @@ import java.util.List;
 @Data
 @Table(name = "hl_department")
 public class Department {
+    // 部门id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "dept_id", nullable = false)
     private Integer deptId;
 
+    // 部门名称
     @Column(name = "dept_name", nullable = false, unique = true, length = 100)
     private String deptName;
 
+    // 员工集合
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Employee> employees;
 }
