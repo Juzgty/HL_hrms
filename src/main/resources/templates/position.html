@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>职位管理 - 人事管理系统</title>
+    <link rel="stylesheet" th:href="@{/css/style1.css}">
 </head>
 <body>
+<h1>职位管理</h1>
 
+<a th:href="@{/position/add}" class="button">添加职位</a>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>职位名称</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="position : ${positions}">
+        <td th:text="${position.id}"></td>
+        <td th:text="${position.name}"></td>
+        <td>
+            <a th:href="@{/position/edit/{id}(id=${position.id})}" class="button">编辑</a>
+            <a th:href="@{/position/delete/{id}(id=${position.id})}" class="button button-danger">删除</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<a th:href="@{/home}" class="button">返回首页</a>
 </body>
 </html>

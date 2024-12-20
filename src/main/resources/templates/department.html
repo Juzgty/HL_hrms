@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>部门管理 - 人事管理系统</title>
+  <link rel="stylesheet" th:href="@{/css/style1.css}">
 </head>
 <body>
+<h1>部门管理</h1>
 
+<a th:href="@{/department/add}" class="button">添加部门</a>
+
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>部门名称</th>
+    <th>描述</th>
+    <th>操作</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="department : ${departments}">
+    <td th:text="${department.id}"></td>
+    <td th:text="${department.name}"></td>
+    <td th:text="${department.description}"></td>
+    <td>
+      <a th:href="@{/department/edit/{id}(id=${department.id})}" class="button">编辑</a>
+      <a th:href="@{/department/delete/{id}(id=${department.id})}" class="button button-danger">删除</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<a th:href="@{/home}" class="button">返回首页</a>
 </body>
 </html>

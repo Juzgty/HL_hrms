@@ -1,6 +1,6 @@
 package cn.hl.hlhrms.repository;
 
-import cn.hl.hlhrms.entity.Admin;
+import  cn.hl.hlhrms.entity.Admin;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
