@@ -2,7 +2,6 @@ package cn.hl.hlhrms.controller;
 
 import cn.hl.hlhrms.entity.Admin;
 import cn.hl.hlhrms.service.AdminService;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -78,22 +77,4 @@ public class AdminController {
         return "login"; // 注册成功后跳转到登录页面
     }
 
-    /**
-     * 查询管理员信息页面
-     *
-     * @param username 用户名
-     * @param model    存储查询结果
-     * @return 查询结果页面
-     */
-    @GetMapping("/info/{username}")
-    public String getAdminInfo(@PathVariable("username") String username, Model model) {
-        try {
-            Admin admin = adminService.getAdminByUsername(username);
-            model.addAttribute("admin", admin);
-            return "admin/info"; // 查询管理员信息页面
-        } catch (Exception e) {
-            model.addAttribute("error", "管理员不存在");
-            return "admin/error"; // 如果管理员不存在，显示错误页面
-        }
-    }
 }
