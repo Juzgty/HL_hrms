@@ -4,7 +4,7 @@ CREATE TABLE hl_position
     pos_name VARCHAR(100) NOT NULL UNIQUE COMMENT '职位名称'
 ) COMMENT ='职位表';
 
-INSERT INTO hl_position (pos_name,)
+INSERT INTO hl_position (pos_name)
 VALUES ('部门经理'),
        ('开发工程师'),
        ('财务专员'),
