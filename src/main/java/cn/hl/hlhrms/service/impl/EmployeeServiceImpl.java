@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * 员工服务层实现类
@@ -19,6 +20,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
+    }
+
+    @Override
+    public Employee findEmployeeById(Integer id) {
+        Optional<Employee> employee = employeeRepository.findById(id);
+        return employee.orElse(null); // 如果找不到员工，返回 null
     }
 
     @Override

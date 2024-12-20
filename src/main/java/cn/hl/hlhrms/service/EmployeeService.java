@@ -10,6 +10,14 @@ import java.util.List;
 
 public interface EmployeeService {
     /**
+     * 根据员工 ID 查找员工
+     *
+     * @param id 员工 ID
+     * @return 员工实体
+     */
+    Employee findEmployeeById(Integer id);
+
+    /**
      * 添加员工
      *
      * @param employee 员工信息
