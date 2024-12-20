@@ -22,6 +22,12 @@
               <label for="password" class="form-label">密码</label>
               <input type="password" id="password" name="password" class="form-control" placeholder="请输入密码" required>
             </div>
+
+            <!-- 错误信息显示 -->
+            <div th:if="${error}" class="alert alert-danger">
+              <p th:text="${error}"></p>
+            </div>
+
             <div class="d-grid">
               <button type="submit" class="btn btn-primary">登录</button>
             </div>
