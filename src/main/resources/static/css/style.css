@@ -1,0 +1,36 @@
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: #343a40;
+}
+
+.card {
+    border-radius: 10px;
+    border: none;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-footer {
+    background-color: #fff;
+    border-top: none;
+}
+
+.btn {
+    font-size: 1.1rem;
+    padding: 0.75rem;
+}
+
+.link-primary, .link-success {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-primary:hover, .link-success:hover {
+    text-decoration: underline;
+}
