@@ -4,6 +4,8 @@ import cn.hl.hlhrms.entity.Department;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * 部门持久层接口
  */
@@ -17,4 +19,7 @@ public interface DepartmentRepository extends JpaRepository<Department, Integer>
      * @return 部门实体
      */
     Department findByDeptName(String deptName);
+
+    List<Department> findByNameContaining(String name);
 }
+

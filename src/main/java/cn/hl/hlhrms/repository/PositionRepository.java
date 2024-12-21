@@ -4,6 +4,8 @@ import cn.hl.hlhrms.entity.Position;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * 职位持久层接口
  */
@@ -16,4 +18,6 @@ public interface PositionRepository extends JpaRepository<Position, Integer> {
      * @return 职位实体
      */
     Position findByPosName(String posName);
+
+    List<Position> findByNameContaining(String name);
 }
