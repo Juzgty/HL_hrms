@@ -44,7 +44,7 @@ public class EmployeeController {
      */
     @GetMapping("/add")
     public String addEmployeePage() {
-        return "employee/add"; // Thymeleaf 视图模板
+        return "addemployee"; // Thymeleaf 视图模板
     }
 
     /**
@@ -130,4 +130,6 @@ public class EmployeeController {
         model.addAttribute("employees", employees);
         return "employee/list"; // 显示员工列表页面
     }
+
+
 }

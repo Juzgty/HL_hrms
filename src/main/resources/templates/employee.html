@@ -1,47 +1,53 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="zh-CN">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>员工列表</title>
+    <title>员工管理 - 人事管理系统</title>
+    <link rel="stylesheet" th:href="@{/css/style1.css}">
 </head>
 <body>
-    <h1>员工列表</h1>
-    <table border="1" cellspacing="0" cellpadding="5">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>姓名</th>
-                <th>性别</th>
-                <th>出生日期</th>
-                <th>身份证号</th>
-                <th>手机号码</th>
-                <th>邮箱</th>
-                <th>地址</th>
-                <th>入职日期</th>
-                <th>部门</th>
-                <th>职位</th>
-                <th>操作</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="employee : ${employees}">
-                <td th:text="${employee.empId}"></td>
-                <td th:text="${employee.name}"></td>
-                <td th:text="${employee.gender}"></td>
-                <td th:text="${#dates.format(employee.birthDate, 'yyyy-MM-dd')}"></td>
-                <td th:text="${employee.idCard}"></td>
-                <td th:text="${employee.phone}"></td>
-                <td th:text="${employee.email}"></td>
-                <td th:text="${employee.address}"></td>
-                <td th:text="${#dates.format(employee.hireDate, 'yyyy-MM-dd')}"></td>
-                <td th:text="${employee.department?.deptName}">无部门</td>
-                <td th:text="${employee.position?.posName}">无职位</td>
-                <td>
-                    <a th:href="@{/employee/edit/{id}(id=${employee.empId})}">编辑</a>
-                    <a th:href="@{/employee/delete/{id}(id=${employee.empId})}">删除</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<h1>员工管理</h1>
+
+<a th:href="@{/employee/add}" class="button">添加员工</a>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>出生日期</th>
+        <th>身份证</th>
+        <th>电话号码</th>
+        <th>邮箱</th>
+        <th>住址</th>
+        <th>入职日期</th>
+        <th>部门ID</th>
+        <th>职位ID</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee : ${employees}">
+        <td th:text="${employee.empId}"></td>
+        <td th:text="${employee.name}"></td>
+        <td th:text="${employee.gender}"></td>
+        <td th:text="${employee.birthDate}"></td>
+        <td th:text="${employee.idCard}"></td>
+        <td th:text="${employee.phone}"></td>
+        <td th:text="${employee.email}"></td>
+        <td th:text="${employee.address}"></td>
+        <td th:text="${employee.hireDate}"></td>
+        <td th:text="${employee.deptId}"></td>
+        <td th:text="${employee.posId}"></td>
+        <td>
+            <a th:href="@{/employee/edit/{id}(id=${employee.empId})}" class="button">编辑</a>
+            <a th:href="@{/employee/delete/{id}(id=${employee.empId})}" class="button button-danger">删除</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<a th:href="@{/home}" class="button">返回首页</a>
 </body>
 </html>
