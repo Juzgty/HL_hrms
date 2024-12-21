@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>添加职位 - 人事管理系统</title>
+    <link rel="stylesheet" th:href="@{/css/style1.css}">
 </head>
 <body>
+<h1>添加职位</h1>
 
+<form th:action="@{/position/add}" method="post">
+    <div>
+        <label for="name">职位名称：</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+        <label for="description">职位描述：</label>
+        <input type="text" id="description" name="description">
+    </div>
+    <button type="submit" class="button">提交</button>
+</form>
+
+<a th:href="@{/position}" class="button">返回职位管理</a>
 </body>
 </html>

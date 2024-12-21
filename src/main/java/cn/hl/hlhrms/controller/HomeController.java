@@ -17,15 +17,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
         return "home"; // 显示首页模板
     }
 
-    /**
-     * 跳转到员工管理页面
-     *
-     * @return 员工管理视图
-     */
-    @GetMapping("/employee")
-    public String showEmployeePage() {
-        return "employee"; // 显示员工管理页面模板
-    }
+//    /**
+//     * 跳转到员工管理页面
+//     *
+//     * @return 员工管理视图
+//     */
+//    @GetMapping("/employee")
+//    public String showEmployeePage() {
+//        return "employee"; // 显示员工管理页面模板
+//    }
 
     /**
      * 跳转到部门管理页面

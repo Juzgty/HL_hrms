@@ -41,11 +41,6 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public List<Department> searchDepartmentByName(String name) {
-        return departmentRepository.findByNameContaining(name);
-    }
-
-    @Override
     public List<Department> getAllDepartments() {
         return departmentRepository.findAll();
     }

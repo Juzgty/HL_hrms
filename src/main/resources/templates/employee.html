@@ -38,8 +38,8 @@
         <td th:text="${employee.email}"></td>
         <td th:text="${employee.address}"></td>
         <td th:text="${employee.hireDate}"></td>
-        <td th:text="${employee.deptId}"></td>
-        <td th:text="${employee.posId}"></td>
+        <td th:text="${employee.department.deptId}"></td>
+        <td th:text="${employee.position.posId}"></td>
         <td>
             <a th:href="@{/employee/edit/{id}(id=${employee.empId})}" class="button">编辑</a>
             <a th:href="@{/employee/delete/{id}(id=${employee.empId})}" class="button button-danger">删除</a>

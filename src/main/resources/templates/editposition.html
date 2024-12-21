@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑职位 - 人事管理系统</title>
+    <link rel="stylesheet" th:href="@{/css/style1.css}">
+</head>
+<body>
+<h1>编辑职位</h1>
+
+<form th:action="@{/position/edit}" method="post">
+    <input type="hidden" name="posId" th:value="${position.posId}">
+    <div>
+        <label for="name">职位名称：</label>
+        <input type="text" id="name" name="name" th:value="${position.name}" required>
+    </div>
+
+    <button type="submit" class="button">保存</button>
+</form>
+
+<a th:href="@{/position}" class="button">返回职位管理</a>
+</body>
+</html>

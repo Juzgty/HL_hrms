@@ -72,7 +72,7 @@ public class EmployeeController {
     public String editEmployeePage(@PathVariable("id") Integer employeeId, Model model) {
         Employee employee = employeeService.findEmployeeById(employeeId);
         model.addAttribute("employee", employee);
-        return "employee/edit"; // Thymeleaf 视图模板
+        return "editemployee"; // Thymeleaf 视图模板
     }
 
     /**

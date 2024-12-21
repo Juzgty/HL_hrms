@@ -20,11 +20,11 @@
     </thead>
     <tbody>
     <tr th:each="position : ${positions}">
-        <td th:text="${position.id}"></td>
-        <td th:text="${position.name}"></td>
+        <td th:text="${position.posId}"></td>
+        <td th:text="${position.posName}"></td>
         <td>
-            <a th:href="@{/position/edit/{id}(id=${position.id})}" class="button">编辑</a>
-            <a th:href="@{/position/delete/{id}(id=${position.id})}" class="button button-danger">删除</a>
+            <a th:href="@{/position/edit/{id}(id=${position.posId})}" class="button">编辑</a>
+            <a th:href="@{/position/delete/{id}(id=${position.posId})}" class="button button-danger">删除</a>
         </td>
     </tr>
     </tbody>

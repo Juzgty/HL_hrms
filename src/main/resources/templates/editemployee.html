@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑员工 - 人事管理系统</title>
+    <link rel="stylesheet" th:href="@{/css/style1.css}">
+</head>
+<body>
+<h1>编辑员工</h1>
+
+<form th:action="@{/employee/edit}" method="post">
+    <input type="hidden" name="empId" th:value="${employee.empId}">
+    <div>
+        <label for="name">姓名：</label>
+        <input type="text" id="name" name="name" th:value="${employee.name}" required>
+    </div>
+    <div>
+        <label for="gender">性别：</label>
+        <select id="gender" name="gender" required>
+            <option th:value="男" th:selected="${employee.gender == '男'}">男</option>
+            <option th:value="女" th:selected="${employee.gender == '女'}">女</option>
+        </select>
+    </div>
+    <div>
+        <label for="birthDate">出生日期：</label>
+        <input type="date" id="birthDate" name="birthDate" th:value="${employee.birthDate}" required>
+    </div>
+    <div>
+        <label for="idCard">身份证：</label>
+        <input type="text" id="idCard" name="idCard" th:value="${employee.idCard}" required>
+    </div>
+    <div>
+        <label for="phone">电话号码：</label>
+        <input type="tel" id="phone" name="phone" th:value="${employee.phone}" required>
+    </div>
+    <div>
+        <label for="email">邮箱：</label>
+        <input type="email" id="email" name="email" th:value="${employee.email}" required>
+    </div>
+    <div>
+        <label for="address">住址：</label>
+        <input type="text" id="address" name="address" th:value="${employee.address}">
+    </div>
+    <div>
+        <label for="hireDate">入职日期：</label>
+        <input type="date" id="hireDate" name="hireDate" th:value="${employee.hireDate}" required>
+    </div>
+    <div>
+        <label for="deptId">部门ID：</label>
+        <input type="number" id="deptId" name="deptId" th:value="${employee.deptId}" required>
+    </div>
+    <div>
+        <label for="posId">职位ID：</label>
+        <input type="number" id="posId" name="posId" th:value="${employee.posId}" required>
+    </div>
+    <button type="submit" class="button">保存</button>
+</form>
+
+<a th:href="@{/employee}" class="button">返回员工管理</a>
+</body>
+</html>

@@ -72,7 +72,7 @@ public class PositionController {
     public String editPositionPage(@PathVariable("id") Integer positionId, Model model) {
         Position position = positionService.findPositionById(positionId);
         model.addAttribute("position", position);
-        return "position/edit"; // Thymeleaf 视图模板
+        return "editposition"; // Thymeleaf 视图模板
     }
 
     /**

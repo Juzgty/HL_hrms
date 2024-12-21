@@ -41,11 +41,6 @@ public class PositionServiceImpl implements PositionService {
     }
 
     @Override
-    public List<Position> searchPositionByName(String name) {
-        return positionRepository.findByNameContaining(name);
-    }
-
-    @Override
     public List<Position> getAllPositions() {
         return positionRepository.findAll();
     }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>编辑部门 - 人事管理系统</title>
+  <link rel="stylesheet" th:href="@{/css/style1.css}">
+</head>
+<body>
+<h1>编辑部门</h1>
+
+<form th:action="@{/department/edit}" method="post">
+  <input type="hidden" name="deptId" th:value="${department.deptId}">
+  <div>
+    <label for="name">部门名称：</label>
+    <input type="text" id="name" name="name" th:value="${department}" required>
+  </div>
+
+  <button type="submit" class="button">保存</button>
+</form>
+
+<a th:href="@{/department}" class="button">返回部门管理</a>
+</body>
+</html>

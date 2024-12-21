@@ -72,7 +72,7 @@ public class DepartmentController {
     public String editDepartmentPage(@PathVariable("id") Integer departmentId, Model model) {
         Department department = departmentService.findDepartmentById(departmentId);
         model.addAttribute("department", department);
-        return "department/edit"; // Thymeleaf 视图模板
+        return "editdepartment"; // Thymeleaf 视图模板
     }
 
     /**

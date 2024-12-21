@@ -19,5 +19,5 @@ public interface PositionRepository extends JpaRepository<Position, Integer> {
      */
     Position findByPosName(String posName);
 
-    List<Position> findByNameContaining(String name);
+    List<Position> findByposNameContaining(String name);
 }
